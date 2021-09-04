@@ -1,4 +1,4 @@
-from album import *
+from diopark.album import *
 
 import os
 import json
