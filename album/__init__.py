@@ -1,5 +1,8 @@
 import os
 import json
+from IPython.display import Image
+from IPython import display
+Image('bp.png')
 
 with open("diopark/data/map.json","r") as f:
   map = json.load(f)
@@ -13,8 +16,8 @@ class Album:
             print("Слишком много фотографий. Не могу показать.")
         else:
             for _photo in self.content:
-                self.render_photo(_photo)
+                display(self.render_photo(_photo))
 
     def render_photo(self, photo):
         path = photo["img"]
-        return open(path, 'rb')
+        return Image(path)
