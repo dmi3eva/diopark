@@ -1,5 +1,6 @@
 import os
 import json
+from base64 import b64encode
 from IPython.display import Image, display, HTML
 Image('bp.png')
 
@@ -20,4 +21,7 @@ class Album:
 
     def render_photo(self, photo):
         path = photo["img"]
-        return Image(path)
+        img = open(path, 'rb').read()
+        data_url = 'data:image/jpeg;base64,' + b64encode(img).decode()
+        return data_url
+        # return Image(path)
