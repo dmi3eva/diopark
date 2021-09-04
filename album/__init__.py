@@ -1,7 +1,6 @@
 import os
 import json
-from IPython.display import Image
-from IPython import display
+from IPython.display import Image, display
 Image('bp.png')
 
 with open("diopark/data/map.json","r") as f:
