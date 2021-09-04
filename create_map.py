@@ -41,7 +41,7 @@ for _cell in map:
     if _cell["animate"]:
         folder = _cell["animal"]
     surface = random.choice(FILES[_cell["surface"]])
-    _cell["img"] = f"{folder}/{surface}"
+    _cell["img"] = f"diopark/{folder}/{surface}"
     _cell["surface"] = _cell["surface"].value
 
 with open("data/map.json","w") as f:
