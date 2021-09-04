@@ -15,7 +15,7 @@ class Album:
             print("Слишком много фотографий. Не могу показать.")
         else:
             for _photo in self.content:
-                display(HTML(f"<img src='{self.render_photo(_photo)}' width='100'>"))
+                display(HTML(f"<img src='{self.render_photo(_photo)}'>"))
                 # display(self.render_photo(_photo))
 
     def render_photo(self, photo):
