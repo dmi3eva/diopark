@@ -5,7 +5,7 @@ from enum import Enum
 
 map = []
 WIDTH = 100
-HEIGHT = 1234
+HEIGHT = 100
 
 
 class Surface(Enum):
@@ -78,7 +78,8 @@ for _x in range(WIDTH):
             "y": _y,
             "animate": False,
             "animal": None,
-            "surface": random.choice(FREQUENCIES)
+            "surface": random.choice(FREQUENCIES),
+            "light": max(0, _x * _x - _y + 10)
         }
         map.append(cell)
 
@@ -124,7 +125,7 @@ cr["surface"] = Surface.FIELD.value
 cr["img"] = "diopark/photos/criminals/greenfield.png"
 
 # Добавляем бочку
-b = [_c for _c in map if _c["x"] == 12 and _c["y"] == 345][0]
+b = [_c for _c in map if _c["x"] == 12 and _c["y"] == 24][0]
 b["animate"] = True
 b["animal"] = "barrel"
 b["surface"] = Surface.FIELD.value
