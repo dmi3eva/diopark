@@ -118,7 +118,7 @@ row_5[ind]["surface"] = Surface.SWAMP.value
 row_5[ind]["img"] = "diopark/photos/zebras/swamp.png"
 
 # Добавляем браконьеров
-cr = [_c for _c in map if _c["x"] == 42 and _c["y"] == 42][0]
+cr = [_c for _c in map if _c["x"] == 49 and _c["y"] == 49][0]
 cr["animate"] = True
 cr["animal"] = "criminals"
 cr["surface"] = Surface.FIELD.value
