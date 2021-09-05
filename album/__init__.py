@@ -16,12 +16,16 @@ class Album:
             print("Слишком много фотографий. Не могу показать.")
         else:
             for _photo in self.content:
-                display(HTML(f"<img src='{self.render_photo(_photo)}' width='25'>"))
+                display(HTML(f"<img src='{self.render_photo(_photo)}' width='100'>"))
                 # display(self.render_photo(_photo))
 
+
     def render_photo(self, photo):
-        path = photo["img"]
-        img = open(path, 'rb').read()
+        try:
+            path = photo["img"]
+            img = open(path, 'rb').read()
+        except:
+            img = open("diopark/photos/without_animals/reeds.png", 'rb').read()
         data_url = 'data:image/jpeg;base64,' + b64encode(img).decode()
         return data_url
         # return Image(path)
