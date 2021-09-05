@@ -181,12 +181,15 @@ def execute_condition(condition):
 
 
 class Drone:
-    def __init__(self, condition):
-        self.condition = condition
+    def __init__(self):
+        pass
 
-    def photo(self):
-        return execute_condition(self.condition)
+    def photo(self, condition):
+        return execute_condition(condition)
 
 # album = execute_condition("x=5 and y = 7")
 # album.print_size()
 # album.print_avg_light()
+
+# drone = Drone("x=5")
+# album = execute_condition("x=5 and y = 7")
