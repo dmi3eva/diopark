@@ -172,6 +172,9 @@ def execute_condition(condition):
     condition = condition.lower()
     if "х" in condition:
         condition.replace("х", "x")
+    # Фотографируем все
+    if len(condition) == 0:
+        return Album(map)
     ors = condition.split("or")
     result = []
     for _or in ors:
