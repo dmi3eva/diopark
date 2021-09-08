@@ -4,8 +4,8 @@ import random
 from enum import Enum
 
 map = []
-WIDTH = 100
-HEIGHT = 100
+WIDTH = 101
+HEIGHT = 102
 
 
 class Surface(Enum):
