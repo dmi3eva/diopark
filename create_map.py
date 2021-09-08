@@ -4,8 +4,8 @@ import random
 from enum import Enum
 
 map = []
-WIDTH = 101
-HEIGHT = 102
+WIDTH = 77
+HEIGHT = 99
 
 
 class Surface(Enum):
@@ -118,7 +118,7 @@ row_5[ind]["surface"] = Surface.SWAMP.value
 row_5[ind]["img"] = "diopark/photos/zebras/swamp.png"
 
 # Добавляем браконьеров
-cr = [_c for _c in map if _c["x"] == 49 and _c["y"] == 49][0]
+cr = [_c for _c in map if _c["x"] == 37 and _c["y"] == 50][0]
 cr["animate"] = True
 cr["animal"] = "criminals"
 cr["surface"] = Surface.FIELD.value
