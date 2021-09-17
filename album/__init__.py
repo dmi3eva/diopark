@@ -77,6 +77,8 @@ class Album:
 
 
     def print_info(self):
+        if len(self.content) > 20:
+            print("Слишком много фотографий. Не могу их все описать.")
         for ind, _photo in enumerate(self.content):
             print(f"Фото №{ind + 1}: {self.get_info(_photo['img'])}")
 
