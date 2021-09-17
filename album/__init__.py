@@ -1,6 +1,38 @@
 from base64 import b64encode
 from IPython.display import Image, display, HTML
 
+WITHOUT = {
+    'desertcactus': 'Кактус в пустыне',
+    'desertstone': 'Пустыня',
+    'greenfield': 'Поле',
+    'mountain': 'Гора',
+    'rainbow': 'Радуга',
+    'reeds': 'Поле с гречихой',
+    'sea': 'Море',
+    'swamp': 'Болото'
+}
+
+ANIMALS = {
+    'barrel': 'Бочка',
+    'criminals': 'Двое подозрительных личностей с топорами',
+    'elephants': 'Слон',
+    'geese': 'Гусь',
+    'gekkons': 'Геккон',
+    'koalas': 'Коала',
+    'loafers': 'Ленивец',
+    'zebras': 'Зеленая зебра'
+}
+
+LANDSCAPE = {
+    'desertcactus': 'в пустыне с кактусами',
+    'desertstone': 'в пустыне',
+    'greenfield': 'в поле',
+    'mountain': 'в горах',
+    'rainbow': 'под радугой',
+    'reeds': 'в гречишном поле',
+    'sea': 'в море',
+    'swamp': 'у болота'
+}
 
 class Album:
     def __init__(self, content):
@@ -26,6 +58,29 @@ class Album:
                 # display(self.render_photo(_photo))
 
 
+
+    def get_info(self, photo_path):
+        if "without_animals" in photo_path:
+            for _key, _descr in WITHOUT.items():
+                if _key in photo_path:
+                    return _descr
+            return 'Ничего не видно'
+        who = 'Неопознанное животное'
+        where = 'непонятно, где'
+        for _key, _descr in ANIMALS.items():
+            if _key in photo_path:
+                who = _descr
+        for _key, _descr in LANDSCAPE.items():
+            if _key in photo_path:
+                where = _descr
+        return f"{who} {where}"
+
+
+    def print_info(self):
+        for ind, _photo in enumerate(self.content):
+            print(f"Фото №{ind}: {self.get_info(_photo['img'])}")
+
+
     def render_photo(self, photo):
         try:
             path = photo["img"]
@@ -35,3 +90,4 @@ class Album:
         data_url = 'data:image/jpeg;base64,' + b64encode(img).decode()
         return data_url
         # return Image(path)
+
