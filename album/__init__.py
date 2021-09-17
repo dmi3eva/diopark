@@ -78,7 +78,7 @@ class Album:
 
     def print_info(self):
         for ind, _photo in enumerate(self.content):
-            print(f"Фото №{ind}: {self.get_info(_photo['img'])}")
+            print(f"Фото №{ind + 1}: {self.get_info(_photo['img'])}")
 
 
     def render_photo(self, photo):
